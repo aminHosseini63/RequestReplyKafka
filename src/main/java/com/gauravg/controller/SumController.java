@@ -34,6 +34,7 @@ public class SumController {
 	@ResponseBody
 	@PostMapping(value="/sum",produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Model sum(@RequestBody Model request) throws InterruptedException, ExecutionException {
+
 		// create producer record
 		ProducerRecord<String, Model> record = new ProducerRecord<String, Model>(requestTopic, request);
 		// set reply topic in header
